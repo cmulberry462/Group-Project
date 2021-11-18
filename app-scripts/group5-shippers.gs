@@ -39,9 +39,9 @@ function activateSheetByName(sheetName) {
 // Test Firestore Connection & Authentication
 
 function testFirestore() {
- var email = "** Paste email here **";
-  var key = "** Paste private key here **";
-  var projectId = "** Paste project id here **";
+ var email = "**email here**";
+  var key = "**key here**";
+  var projectId = "**id here**";
 var firestore = FirestoreApp.getFirestore(email, key, projectId);
 const data = {
 "name": "test!"
@@ -53,16 +53,16 @@ Logger.log(data);
 // ---------------- Write Shippers Data to Firestore --------------
 
 function writeShippersDataToFirebase() {
-  var email = "** Paste email here **";
-  var key = "** Paste private key here **";
-  var projectId = "** Paste project id here **";
+ var email = "**email here**";
+  var key = "**key here**";
+  var projectId = "**id here**";
   var firestore = FirestoreApp.getFirestore(email, key, projectId);
   // var url = SpreadsheetApp.getActiveSpreadsheet().getUrl();
   
   // Shippers
   // ShipperID	CompanyName	Phone
   
-  var sheetName = 'shippers';
+  var sheetName = 'northwind_table_shippers';
   var url = SpreadsheetApp.getActiveSpreadsheet().getUrl();
   var ss = SpreadsheetApp.openByUrl(url);
   var sheet = activateSheetByName(sheetName);
@@ -91,6 +91,5 @@ firestore.createDocument("Shippers/", dataToImport[ShipperID + '-' + CompanyName
 // Logger.log(dataToImport);
 }
 }
-
 
 
